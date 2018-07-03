@@ -1,3 +1,5 @@
+{% load static %}
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,11 +9,30 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" href='{% static "css/main.css" %}'>
 
     <div class='text-center'>
       <h1>Hello, world!</h1>
     </div>
-    
+<!-- container -->
+    <div class='container'>
+      <div class='row'>
+        <div='col'>
+        <img src="{% static 'img/beach.jpg' %}" class='img-fluid'>
+        <p class='pt-3'>{{ content }}</p>
+    </div>
+  
+   <div class='row'>
+        <div='col'>
+        {% if request.user.is_authenticated %}
+        <h1>Premium</h1>
+        <p class='pt-3'>{{ premium_content }}</p>
+        {% endif %}
+      </div>
+    </div>
+    </div>
+</div>
+  <!-- container -->
   </head>
   <body>
 

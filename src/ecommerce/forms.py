@@ -1,20 +1,5 @@
 from django import forms
 from django.contrib.auth import get_user_model
-import functools
-import gzip
-import os
-import re
-from difflib import SequenceMatcher
-
-from django.conf import settings
-from django.core.exceptions import (
-    FieldDoesNotExist, ImproperlyConfigured, ValidationError,
-)
-from django.utils.functional import lazy
-from django.utils.html import format_html
-from django.utils.module_loading import import_string
-from django.utils.translation import gettext as _, ngettext
-
 
 
 User = get_user_model()
@@ -90,6 +75,22 @@ class RegisterForm(forms.Form):
 		if validate_password(password):
 			return data
 
+
+# Password validation(src= https://docs.djangoproject.com/en/2.0/_modules/django/contrib/auth/password_validation/)
+import functools
+import gzip
+import os
+import re
+from difflib import SequenceMatcher
+
+from django.conf import settings
+from django.core.exceptions import (
+    FieldDoesNotExist, ImproperlyConfigured, ValidationError,
+)
+from django.utils.functional import lazy
+from django.utils.html import format_html
+from django.utils.module_loading import import_string
+from django.utils.translation import gettext as _, ngettext
 
 
 @functools.lru_cache(maxsize=None)

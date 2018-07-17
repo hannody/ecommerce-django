@@ -1,0 +1,10 @@
+### Understanding CRUD
+
+CRUD is for managing Databases operations
+
+C: Create -- POST
+R: Retrive/ List/Search -- GET
+U: Update -- PUT/ Patch
+D: Delete -- Delete
+
+

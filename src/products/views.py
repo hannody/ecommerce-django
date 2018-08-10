@@ -17,8 +17,8 @@ class ProductFeaturedListView(ListView):
 class ProductFeaturedDetailView(DetailView):
 
     teampalte_name  = "products/featured-detail.html"
-
-    def get_context_data(self, *args, **kwargs):
+    def get_queryset(self, *args, **kwargs):
+        request = self.request
         return Product.objects.featured()
 
 

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href='{% static "css/main.css" %}'>
 
     <div class='text-center'>
-      <h1>Hello, world!</h1>
+      <h1>{{title}}</h1>
     </div>
 <!-- container -->
     <div class='container'>
@@ -21,7 +21,7 @@
         <img src="{% static 'img/beach.jpg' %}" class='img-fluid'>
         <p class='pt-3'>{{ content }}</p>
     </div>
-  
+
    <div class='row'>
         <div='col'>
         {% if request.user.is_authenticated %}

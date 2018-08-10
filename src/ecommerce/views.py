@@ -8,7 +8,7 @@ from django.contrib.auth import authenticate, login, get_user_model
 
 def home_page(request):
 	content= {
-		"title":"Home",
+		"title":"Welcome to this ECommerece Portal!",
 		"content": "Free Content.",
 	}
 
@@ -21,7 +21,7 @@ def about_page(request):
 		"title":"About",
 		"content": "Welcome to the About Page."
 	}
-	return render(request, 'home_page.html', content)
+	return render(request, 'about_page.html', content)
 
 
 def login_page(request):
@@ -82,7 +82,7 @@ def contact_page(request):
 
 
 	content= {
-		"title":"Contact",
+		"title":"Contact Us",
 		"content": "Welcome to the Contact Page.",
 		"form": contact_form,
 	}

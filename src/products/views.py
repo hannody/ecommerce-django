@@ -19,8 +19,7 @@ class ProductFeaturedDetailView(DetailView):
     teampalte_name  = "products/featured-detail.html"
 
     def get_context_data(self, *args, **kwargs):
-
-     return Product.objects.featured()
+        return Product.objects.featured()
 
 
 class ProductListView(ListView):
@@ -45,7 +44,14 @@ class ProductDetailView(DetailView):
     def get_queryset(self, *args, **kwargs):
         #this function is replacing the det_object()..
         request = self.request
+
         pk      = self.kwargs.get('pk')
+
+        instance = Product.objects.get_by_id(pk)
+
+        if instance is None:
+            raise Http404("Product does not exist!")
+
         return Product.objects.filter(pk=pk)
 
 
